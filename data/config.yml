@@ -1,0 +1,7 @@
+lang: 'uk'
+title: 'Classic-Man'
+description: 'Website description'
+author: 'Bean Shone'
+
+# add id or leave it blank, ex.: UA-XXXXX-X
+google_analytics_id:

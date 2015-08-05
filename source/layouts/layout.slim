@@ -1,0 +1,25 @@
+doctype html
+html class="no-js" lang="#{data.config.lang}"
+  head
+    = partial 'layouts/partials/main_meta_tags'
+    - if build?
+      = partial 'layouts/partials/favicons'
+    = partial 'layouts/partials/head_links'
+
+    - if build?
+      = partial 'layouts/partials/favicons'
+
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic,latin"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor"
+
+  body class="#{page_classes}"
+
+    .container role="main"
+      = yield
+
+    = javascript_include_tag "application"
+
+    / Google analytics
+    - unless data.config.google_analytics_id.blank?
+      = partial 'layouts/partials/google_analytics_code'

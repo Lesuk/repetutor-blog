@@ -1,0 +1,22 @@
+team:
+  -
+    role: 'creator'
+    name: 'Alexander Osetskiy'
+    contact: 'lesuk93 [at] yahoo.com'
+    from: 'Lviv, Ukraine'
+
+languages:
+  - Ukrainian
+
+standards_used:
+  - CSS3 (SASS)
+  - HTML5 (Slim)
+  - JavaScript
+
+components_used:
+  - Normalize.css
+  - Autoprefixer
+
+software_used:
+  - Sublime Text
+  - Photoshop
