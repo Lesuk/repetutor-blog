@@ -1,13 +1,14 @@
 doctype html
-html class="no-js" lang="#{data.config.lang}"
+html class="no-js" lang="#{data.site.lang}"
   head
-    = partial 'layouts/partials/main_meta_tags'
+    = partial 'partials/main_meta_tags'
+    = partial 'partials/meta_social_tags'
     - if build?
-      = partial 'layouts/partials/favicons'
-    = partial 'layouts/partials/head_links'
+      = partial 'partials/favicons'
+    = partial 'partials/head_links'
 
     - if build?
-      = partial 'layouts/partials/favicons'
+      = partial 'partials/favicons'
 
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic,latin"
     = stylesheet_link_tag "application"
@@ -21,5 +22,5 @@ html class="no-js" lang="#{data.config.lang}"
     = javascript_include_tag "application"
 
     / Google analytics
-    - unless data.config.google_analytics_id.blank?
-      = partial 'layouts/partials/google_analytics_code'
+    - unless data.site.google_analytics_id.blank? && development?
+      = partial 'partials/google_analytics_code'

@@ -1,0 +1,27 @@
+---
+pageable: true
+---
+= wrap_layout :layout do
+  article.article-page
+    header
+    /  h1 = current_article.title
+    / .tags
+    /   - current_article.tags.sort_by(&:length).each do |tag|
+    /     = link_to tag.to_s, tag_path(tag)
+    / .info
+    /   .author
+    /     - author = data.authors.authors.each_with_index do |author, i|
+    /       - if i == current_article.data.author_index
+    /         img width="40" height="40" alt="#{author.name}" src="#{author.img_path}"
+    /         span #{author.name}
+    /   time.date = current_article.date.strftime('%d.%m.%y')
+    /   .share
+    /     a.vk href="#{vk_share(current_article)}" rel="nofollow" title="Поділитись в ВКонтакті" vk
+    /     a.fb href="#{fb_share(current_article)}" rel="nofollow" title="Поділитись в Facebook" fb
+    /     a.tw href="#{tw_share(current_article)}" rel="nofollow" title="Поділитись в Twitter" tw
+    /     a.odn href="#{odn_share(current_article)}" rel="nofollow" title="Поділитись в Однокласниках" odn
+    /     a.print href="javascript:if(window.print)window.print()" rel="nofollow" title="Друкувати" print
+    / .main-content role="main"
+    /   = yield
+
+    / = partial "partials/next_prev_articles", locals: {current_article: current_article}

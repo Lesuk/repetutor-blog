@@ -1,5 +1,9 @@
 require 'breakpoint'
+require 'extensions/sitemap.rb'
+require 'dotenv'
 Slim::Engine.disable_option_validator!
+
+Time.zone = 'Europe/Kiev'
 
 # ====================================
 #   Compass
@@ -14,9 +18,28 @@ end
 #   Activate Plugins
 # ====================================
 
+activate :blog do |blog|
+  blog.prefix = "blog"
+  blog.permalink = "{slug}"
+  blog.sources = "articles/{year}-{month}-{day}-{title}.html"
+  blog.taglink = "tags/{tag}.html"
+  # blog.layout = "article_layout"
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
+  blog.default_extension = ".markdown"
+
+  blog.tag_template = "tag.html"
+  # blog.calendar_template = "calendar.html"
+
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "page/{num}"
+end
+
 # activate :automatic_image_sizes
 activate :directory_indexes
 activate :livereload
+activate :sitemap_generator
 
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 10']
@@ -33,15 +56,24 @@ set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
 set :slim, pretty: true
 
+set :disabled_files_in_sitemap, ['sitemap.html', '404.html']
+
+# require 'kramdown'
+# set :markdown_engine, :kramdown
+# set :md, :layout_engine => :erb, :auto_ids => false
+
 # ====================================
-#   Helpers
+#   Pages
 # ====================================
 
-helpers do
-  # If you need helpers for use in this file, then you
-  # can define them here. Otherwise, they should be defined
-  # in `helpers/custom_helpers.rb`.
-end
+page '/feed.xml', layout: false
+page '/sitemap.html', layout: false
+page '/sitemap.xml', layout: false
+page '/robots.txt', layout: false
+page '/humans.txt', layout: false
+page "/404.html" #, :directory_index => false
+page "/articles/*", :layout => :article_layout
+
 
 # ====================================
 #   After Configuration
@@ -66,6 +98,8 @@ configure :build do
 
   # Compress and optimize images
   activate :imageoptim
+
+  activate :gzip
 
   activate :favicon_maker do |f|
     f.template_dir = File.join(root, 'source/assets/images')
@@ -98,10 +132,10 @@ configure :build do
   end
 end
 
-# activate :deploy do |deploy|
-#   deploy.method   = :ftp
-#   deploy.host     = 'ftp.website.com.ua'
-#   deploy.path     = '/public_html/website'
-#   deploy.user     = 'user123'
-#   deploy.password = 'somepass123'
-# end
+activate :deploy do |deploy|
+  deploy.method   = :ftp
+  deploy.host     = ENV['FTP_HOST']
+  deploy.path     = ENV['FTP_PATH']
+  deploy.user     = ENV['FTP_USER']
+  deploy.password = ENV['FTP_PASS']
+end

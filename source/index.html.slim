@@ -1,5 +1,14 @@
 ---
-title: Welcome
+pageable: true
+per_page: 10
 ---
 
-p classic-man
+.blog
+  h1.blog-head Публікації
+  section.content
+  /   - page_articles.each do |article|
+  /     = partial "partials/article_item", locals: {article: article}
+  / = partial "partials/sidebar"
+
+  / .pagination
+  /   = pagination_links
