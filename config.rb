@@ -38,7 +38,7 @@ end
 
 # activate :automatic_image_sizes
 activate :directory_indexes
-activate :livereload
+activate :livereload, :host => "127.0.0.1"
 activate :sitemap_generator
 
 activate :autoprefixer do |config|

@@ -152,3 +152,27 @@
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 }
+
+.h-no-border{
+  border: none !important;
+}
+
+.h-section-headline{
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+
+  @include breakpoint(500px){
+    font-size: 20px;
+  }
+}
+
+.h-section-block{
+  margin: 0 0 40px 0;
+  padding: 10px 14px 40px;
+  border-bottom: 1px solid $border-color;
+
+  @include breakpoint(500px){
+    padding: 10px 34px 40px;
+  }
+}

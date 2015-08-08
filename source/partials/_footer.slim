@@ -1,0 +1,9 @@
+footer.footer role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter"
+  .footer__wrapper
+    p.footer__copyright
+      ' &copy;
+      span itemprop="copyrightYear"
+        ' 2015
+      span itemprop="copyrightHolder" itemscope="itemscope" itemtype="http://schema.org/Organization"
+        span itemprop="name" #{data.site.main_web_site_name}
+        link itemprop="url" href="#{data.site.main_web_site_url}"

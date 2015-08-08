@@ -1,0 +1,63 @@
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+
+  &__breadcrumbs{
+    margin: 0 10px;
+
+    @include breakpoint(500px){
+      margin: 0 20px;
+    }
+
+    @include breakpoint(1000px){
+      max-width: 960px;
+      margin: 0 auto;
+    }
+  }
+
+  &__wrapper{
+    margin: 10px;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    background-color: $white;
+
+    @include breakpoint(500px){
+      margin: 15px 20px;
+    }
+
+    @include breakpoint(1000px){
+      margin: 15px 0;
+    }
+  }
+
+  &__profile{
+    margin-bottom: 20px;
+  }
+
+  &__tutor-contacts{
+    margin-bottom: 30px;
+
+    @include breakpoint(1000px){
+      margin-bottom: 50px;
+    }
+  }
+
+  &__about-tutor{
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__faq-block{}
+
+  &__reviews{}
+
+  &__secondary-photos{
+    text-align: center;
+
+    @include breakpoint(500px){
+      display: none;
+    }
+  }
+
+
+}

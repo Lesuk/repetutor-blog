@@ -1,0 +1,24 @@
+.btn{
+  display: inline-block;
+  padding: 10px 28px;
+  text-decoration: none;
+  color: $blue-dark;
+  font-size: 16px;
+  background-color: $light-white;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+}
+
+.btn-main{
+  margin-bottom: 3px;
+  border: none;
+  color: #fff;
+  background-color: $red;
+  box-shadow: 0px 3px 0px 0px $red-dark;
+
+  &:hover,
+  &:active,
+  &:visited{
+    color: #fff;
+  }
+}

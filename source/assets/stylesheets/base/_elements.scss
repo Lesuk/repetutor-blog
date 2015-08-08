@@ -10,21 +10,63 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+html{
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice */
+*,
+*:before,
+*:after{
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  line-height: 22px;
+  background-color: $light-white;
+  font-family: $openSans;
+  font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: $dark-light;
+}
+
+p{
+  margin-top: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+
+img{
+  // width: 100%;
+  // height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
 html,
 button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $gray;
 }
 
-body {
-    font-size: 1em;
-    line-height: 1.4;
+a{
+  color: $blue-light;
+  text-decoration: none;
 }
 
-a {
-    color: #00e;
+a, a:active, a:hover, a:visited {
+  outline: none;
 }
 
 a:visited {
@@ -32,16 +74,11 @@ a:visited {
 }
 
 a:hover {
-    color: #06e;
+    color: $blue-light;
 }
 
-/*
- * Remove the gap between images and the bottom of their containers
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-img {
-    vertical-align: middle;
+a:focus{
+  box-shadow: 0px 0px 2px $blue-light;
 }
 
 /*

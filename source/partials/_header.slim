@@ -1,0 +1,8 @@
+header.header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"
+  .header__wrapper.h-clearfix
+    .header__logo.h-float-left
+      a.header__logo-link href="#{data.site.main_web_site_url}"
+        span.header__logo-title itemprop="name" #{data.site.main_web_site_name}
+
+    .header__main-nav.h-float-right
+      = partial 'partials/main_nav'

@@ -7,19 +7,23 @@ html class="no-js" lang="#{data.site.lang}"
       = partial 'partials/favicons'
     = partial 'partials/head_links'
 
-    - if build?
-      = partial 'partials/favicons'
-
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic,latin"
     = stylesheet_link_tag "application"
-    = javascript_include_tag "vendor"
 
-  body class="#{page_classes}"
+  body class="#{page_classes}" itemscope="itemscope" itemtype="http://schema.org/WebPage"
 
-    .container role="main"
-      = yield
+    = partial 'partials/header'
+
+    /.container__breadcrumbs
+      = partial 'partials/breadcrumbs'
+
+    = yield
+
+    /= partial 'partials/footer'
 
     = javascript_include_tag "application"
+
+    = partial 'partials/web_site'
 
     / Google analytics
     - unless data.site.google_analytics_id.blank? && development?

@@ -20,10 +20,9 @@ module CustomHelpers
     current_page.url.include?(page)
   end
 
-  # Title to Slug
-  # def make_slug(title)
-  #   (title).to_slug.normalize.transliterate(:ukrainian).to_s
-  # end
+  def active_link(page)
+    is_page_active?(page) ? 'is-active' : ''
+  end
 
   def format_date(date)
     date.strftime('%B %d, %Y')
