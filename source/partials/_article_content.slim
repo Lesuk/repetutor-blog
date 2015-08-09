@@ -1,0 +1,17 @@
+.article-content
+  .article-content__image-block
+    img.article-content__image-src src="#{lorem.image('780x370')}"
+
+  h1.article-content__title = article.title
+
+  .article-content__info.h-clearfix
+
+    .article-content__author
+      a.article-content__author-link href="#"
+        img.article-content__author-img src="#{image_path('lesuk.png')}"
+        span.article-content__author-name Олександр Осецький
+
+    span.article-content__date 5 вересня, 2015
+
+  main.article-content__body role="main"
+    = article.body

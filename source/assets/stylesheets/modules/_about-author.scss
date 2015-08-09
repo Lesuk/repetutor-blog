@@ -1,0 +1,46 @@
+.about-author{
+  position: relative;
+  display: inline-block;
+  margin-top: 24px;
+  padding: 20px 0;
+  border: 1px solid $border-color;
+  border-width: 1px 0 1px 0;
+
+  &__headline{
+    position: absolute;
+    top: -24px;
+    left: 0;
+    text-transform: uppercase;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $blue-dark;
+  }
+
+  &__img{
+    display: block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 3px;
+  }
+
+  &__name{
+    font-weight: 600;
+    color: $blue-dark;
+
+    &:visited{
+      color: $blue-dark;
+    }
+
+    &:hover{
+      text-decoration: underline;
+      color: $blue-dark;
+    }
+  }
+  &__about{
+    font-size: 14px;
+  }
+}

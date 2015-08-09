@@ -1,14 +1,12 @@
-/ = breadcrumbs(current_page)
-/ ul.breadcrumbs xmlns:v="http://rdf.data-vocabulary.org/#"
-/   li.breadcrumbs__item typeof="v:Breadcrumb"
-/     a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.main_web_site_url}"
-/       | Репетиторство
+ul.breadcrumbs xmlns:v="http://rdf.data-vocabulary.org/#"
+  li.breadcrumbs__item typeof="v:Breadcrumb"
+    a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.main_web_site_url}"
+      | Репетиторство
 
-/   li.breadcrumbs__item typeof="v:Breadcrumb"
-/     a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.url}" class="#{active_link()}"
-/       | Блог
+  li.breadcrumbs__item typeof="v:Breadcrumb"
+    a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.url}"
+      | Блог
 
-/   - if current_page.parent
-/   li.breadcrumbs__item typeof="v:Breadcrumb"
-/     a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.url}"
-/       | Блог
+  li.breadcrumbs__item typeof="v:Breadcrumb"
+    a.breadcrumbs__link rel="v:url" property="v:title" href="#{category_path(article.data.category)}"
+      = article.data.category

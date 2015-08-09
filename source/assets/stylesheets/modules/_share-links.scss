@@ -1,0 +1,44 @@
+.share-links{
+  text-align: center;
+
+  &__title{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $blue-dark;
+  }
+  &__list{
+    font-size: 0;
+    line-height: 0;
+  }
+  &__item{
+    display: inline-block;
+    margin-right: 24px;
+
+    &:last-child{
+      margin: 0;
+    }
+  }
+  &__item-link{
+    display: block;
+    width: 32px;
+    height: 32px;
+    padding: 16px;
+
+    &.-type-vk{
+      background: url(image_path('social-icons/vk-32.png')) center center no-repeat;
+    }
+    &.-type-odn{
+      background: url(image_path('social-icons/odnokl-32.png')) center center no-repeat;
+    }
+    &.-type-fb{
+      background: url(image_path('social-icons/Facebook-32.png')) center center no-repeat;
+    }
+    &.-type-tw{
+      background: url(image_path('social-icons/Twitter-32.png')) center center no-repeat;
+    }
+  }
+}

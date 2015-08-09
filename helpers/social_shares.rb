@@ -6,7 +6,7 @@ module SocialShares
   end
   def vk_share(article)
     base = "http://repetitor.lviv.ua/"
-    url  = "http://vkontakte.ru/share.php?"
+    url  = "http://vk.com/share.php?"
     url += "url=" + "#{base}#{article.data.slug}"
     url += "&title=" + "#{article.data.title}"
     url += "&description=" + "#{article.data.description}"

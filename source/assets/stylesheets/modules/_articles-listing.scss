@@ -1,0 +1,30 @@
+.articles-listing{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 24px;
+  border-top: 1px solid $border-color;
+
+  &__headline{
+    position: absolute;
+    top: -24px;
+    left: 0;
+    text-transform: uppercase;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $blue-dark;
+  }
+  &__list{}
+  &__item{}
+  &__item-link{
+    display: block;
+    padding: 8px 0;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
