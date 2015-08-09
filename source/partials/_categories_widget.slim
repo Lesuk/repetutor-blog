@@ -1,7 +1,8 @@
 .categories-widget.blog-sidebar__widget
   span.categories-widget__title Категорії
   ul.categories-widget__list
-    li.categories-widget__item
-      a.categories-widget__item-link href="#sd" Навчання
-    li.categories-widget__item
-      a.categories-widget__item-link href="#sd" Репетиторство
+    - categories = build_categories(blog.articles)
+    - categories.each do |category|
+      li.categories-widget__item
+        = link_to data.categories[category.to_s]['name'], category_path(category), class: 'categories-widget__item-link'
+        /a.categories-widget__item-link href="#sd" Навчання

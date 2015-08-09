@@ -1,7 +1,13 @@
-authors:
--
+unknown:
+  name: 'Адміністрація'
+  description: 'Адміністрація сайту публікує тільки найкраще :)'
+  img_path: "https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/73.jpg"
+olga:
   name: "Ольга Костенко"
-  img_path: "https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/48.jpg"
--
+  description: 'Люблю читати книги, над змістом яких можна поміркувати і винести для себе щось цінне. Захоплююсь психологією і філософією, люблю аналітику. У вільний час катаюсь на велосипеді, люблю піші прогулянки.'
+  img_path: "https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/73.jpg"
+
+yula:
   name: "Юлія Шевченко"
-  img_path: "https://s3.amazonaws.com/uifaces/faces/twitter/geeftvorm/48.jpg"
+  description: 'Люблю писати тексти і оформляти гарними фотографіями.'
+  img_path: "https://s3.amazonaws.com/uifaces/faces/twitter/geeftvorm/73.jpg"

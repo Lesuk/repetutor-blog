@@ -20,7 +20,7 @@ end
 
 activate :blog do |blog|
   # blog.prefix = "blog"
-  blog.permalink = "{slug}"
+  blog.permalink = "{category_slug}/{slug}"
   blog.sources = "articles/{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
   # blog.layout = "article_layout"
@@ -32,13 +32,17 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 
   blog.paginate = true
-  blog.per_page = 10
+  blog.per_page = 4
   blog.page_link = "page/{num}"
 
   blog.custom_collections = {
     category: {
       link: '/categories/{category}.html',
       template: 'category.html'
+    },
+    author: {
+      link: '/authors/{author}.html',
+      template: 'author.html'
     }
   }
 end
@@ -47,6 +51,7 @@ end
 activate :directory_indexes
 activate :livereload, :host => "127.0.0.1"
 activate :sitemap_generator
+activate :i18n, :langs => [:uk]
 
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 10']

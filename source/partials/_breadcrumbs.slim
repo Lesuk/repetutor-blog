@@ -1,12 +1,9 @@
+- article_category = article.data.category.present? ? article.data.category.to_s : 'unknown'
 ul.breadcrumbs xmlns:v="http://rdf.data-vocabulary.org/#"
   li.breadcrumbs__item typeof="v:Breadcrumb"
     a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.main_web_site_url}"
       | Репетиторство
 
   li.breadcrumbs__item typeof="v:Breadcrumb"
-    a.breadcrumbs__link rel="v:url" property="v:title" href="#{data.site.url}"
-      | Блог
-
-  li.breadcrumbs__item typeof="v:Breadcrumb"
     a.breadcrumbs__link rel="v:url" property="v:title" href="#{category_path(article.data.category)}"
-      = article.data.category
+      = data.categories[article_category]['name']

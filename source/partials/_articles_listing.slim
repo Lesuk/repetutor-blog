@@ -1,9 +1,7 @@
-.articles-listing
-  .articles-listing__headline = headline
-  ul.articles-listing__list
-    li.articles-listing__item
-      a.articles-listing__item-link href="#" Як пройти перший етап в університеті
-    li.articles-listing__item
-      a.articles-listing__item-link href="#" 10 порад при поступлені на стаціонар
-    li.articles-listing__item
-      a.articles-listing__item-link href="#" А як ви закінчили навчання?
+- unless articles.nil?
+  .articles-listing
+    .articles-listing__headline = headline
+    ul.articles-listing__list
+      - articles.each do |article|
+        li.articles-listing__item
+          = link_to article.title, article, class: 'articles-listing__item-link'

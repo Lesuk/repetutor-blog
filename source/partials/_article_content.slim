@@ -1,17 +1,19 @@
 .article-content
-  .article-content__image-block
-    img.article-content__image-src src="#{lorem.image('780x370')}"
+  - if article.data.image_src
+    .article-content__image-block
+      img.article-content__image-src src="#{article.data.image_src}"
 
   h1.article-content__title = article.title
 
   .article-content__info.h-clearfix
 
+    - article_author = article.data.author.present? ? article.data.author.to_s : 'unknown'
     .article-content__author
-      a.article-content__author-link href="#"
-        img.article-content__author-img src="#{image_path('lesuk.png')}"
-        span.article-content__author-name Олександр Осецький
+      = link_to author_path(article.data.author), class: 'article-content__author-link'
+        img.article-content__author-img src="#{data.authors[article_author]['img_path']}"
+        span.article-content__author-name = data.authors[article_author]['name']
 
-    span.article-content__date 5 вересня, 2015
+    span.article-content__date = format_date(article.date)
 
   main.article-content__body role="main"
     = article.body

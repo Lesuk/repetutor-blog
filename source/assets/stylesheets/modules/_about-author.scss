@@ -1,6 +1,7 @@
 .about-author{
   position: relative;
   display: inline-block;
+  width: 100%;
   margin-top: 24px;
   padding: 20px 0;
   border: 1px solid $border-color;
@@ -21,8 +22,8 @@
   &__img{
     display: block;
     float: left;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin-right: 20px;
     border-radius: 3px;
   }
@@ -41,6 +42,7 @@
     }
   }
   &__about{
+    margin: 0;
     font-size: 14px;
   }
 }

@@ -25,7 +25,8 @@ module CustomHelpers
   end
 
   def format_date(date)
-    date.strftime('%B %d, %Y')
+    # date.strftime('%B %d, %Y')
+    I18n.localize(date, :format => "%B %d, %Y")
   end
 
   def current_page_url
@@ -46,5 +47,14 @@ module CustomHelpers
 
   def review_rating_percent(rating)
     (100 / 5) * rating
+  end
+
+  def build_categories(articles)
+    categories = []
+    articles.each do |article|
+      category = article.metadata[:page]['category']
+      categories.push(category) unless categories.include? category
+    end
+    return categories
   end
 end

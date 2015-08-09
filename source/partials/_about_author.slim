@@ -1,5 +1,6 @@
+- article_author = article.data.author.present? ? article.data.author.to_s : 'unknown'
 .about-author.h-clearfix
   .about-author__headline Про автора
-  img.about-author__img src="#{image_path('lesuk.png')}"
-  a.about-author__name href="#" Олександр Осецький
-  p.about-author__about = lorem.words 30
+  img.about-author__img src="#{data.authors[article_author]['img_path']}"
+  = link_to data.authors[article_author]['name'], author_path(article.data.author), class: 'about-author__name'
+  p.about-author__about = data.authors[article_author]['description']

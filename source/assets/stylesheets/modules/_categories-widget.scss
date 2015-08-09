@@ -29,6 +29,9 @@
       &:hover{
         background-color: $light-white;
       }
+      &:visited{
+        color: $blue-light;
+      }
     }
   }
 }
