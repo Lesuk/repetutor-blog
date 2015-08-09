@@ -44,4 +44,7 @@ module CustomHelpers
     current_page.data.image_path || image_path('Mortar-Board_main.png')
   end
 
+  def review_rating_percent(rating)
+    (100 / 5) * rating
+  end
 end

@@ -1,0 +1,21 @@
+.blog-wrapper{
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  &__articles-list{
+    float: left;
+    // max-width: 620px;
+    max-width: 65.957446809%;
+    // margin-right: 20px;
+    // margin-right: 2.083333333%;
+  }
+
+  &__blog-sidebar{
+    float: right;
+    width: 100%;
+    // max-width: 300px;
+    max-width: 31.914893617%;
+  }
+}

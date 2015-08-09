@@ -1,0 +1,83 @@
+.tutors-widget{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 24px;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  background-color: #fff;
+
+  &__title{
+    position: absolute;
+    top: -24px;
+    left: 20px;
+    text-transform: uppercase;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $blue-dark;
+  }
+
+  &__list{}
+  &__item{
+    position: relative;
+  }
+  &__item-link{
+    &:hover .tutors-widget__wrapper{
+      background-color: $light-white;
+    }
+  }
+  &__wrapper{
+    position: relative;
+    width: 100%;
+    padding: 10px 14px;
+    border-bottom: 1px solid $border-color;
+  }
+  &__image-block{
+    width: 60px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  &__name{
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $dark-light;
+  }
+  &__job-title{
+    display: block;
+    line-height: 18px;
+    font-size: 13px;
+    color: $blue-dark;
+  }
+
+  &__rating-block{
+    display: table-cell;
+  }
+  &__rating-g-stars{
+    display: inline-block;
+    width: 96px;
+    height: 18px;
+    vertical-align: bottom;
+    text-align: left;
+    background: url(image_path('stars-gray.png')) 0 0 no-repeat;
+  }
+  &__rating-y-stars{
+    display: inline-block;
+    height: 18px;
+    background: url(image_path('stars-yellow.png')) 0 0 no-repeat;
+  }
+  &__rating-value{
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 13px;
+    line-height: 18px;
+    vertical-align: bottom;
+    color: $gray-light;
+  }
+
+}

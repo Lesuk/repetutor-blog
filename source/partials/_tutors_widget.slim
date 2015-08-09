@@ -1,0 +1,5 @@
+.tutors-widget.blog-sidebar__widget
+  span.tutors-widget__title Репетитори
+  ul.tutors-widget__list
+    - data.tutors.tutors.each do |tutor|
+      = partial 'partials/tutors_widget__item', locals: {tutor: tutor}

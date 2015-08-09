@@ -1,0 +1,29 @@
+.search-widget{
+  &__block{
+    width: 100%;
+  }
+  &__input{
+    display: table-cell;
+    width: calc(100% - 40px);
+    outline: 0;
+    padding: 10px 14px;
+    border: 1px solid $border-color;
+    border-radius: 3px 0 0 3px;
+    border-width: 1px 0 1px 1px;
+    background-color: #fff;
+    vertical-align: top;
+  }
+  &__button{
+    display: table-cell;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    outline: 0;
+    border: 1px solid #E8EAE9;
+    border-radius: 0 3px 3px 0;
+    border-width: 1px 1px 1px 0;
+    background-color: #fff;
+    vertical-align: top;
+    background: #fff url(image_path('search-icon_1.png')) center center no-repeat;
+  }
+}

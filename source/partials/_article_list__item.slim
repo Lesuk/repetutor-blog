@@ -1,0 +1,8 @@
+article.articles-list__item
+  = article.tags.map{ |i| link_to i.to_s, tag_path(i), class: "articles-list__item-category" }.join(", ")
+  = link_to article, class: "articles-list__item-title-link" do
+    h3.articles-list__item-title = article.title
+  p.articles-list__item-description = article.data.description
+  .articles-list__item-info
+    a.articles-list__item-author href="#" Олександр Осецький
+    span.articles-list__item-date = article.date.strftime('%d.%m.%y')

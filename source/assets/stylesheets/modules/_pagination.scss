@@ -1,0 +1,39 @@
+.pagination{
+  padding: 20px;
+  text-align: center;
+
+  ul{
+    margin: 0;
+    padding: 0;
+
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+
+  .page{
+    display: inline-block;
+    padding: 5px 11px;
+    margin: 0 4px 0 0;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-decoration: none;
+    color: $blue-dark;
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+      background-color: $blue-light;
+      border-color: #fff;
+    }
+    &.active {
+      border-color: #fff;
+      background: $blue-dark;
+      color: #fff;
+    }
+  }
+}

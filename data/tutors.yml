@@ -1,0 +1,11 @@
+tutors:
+  -
+    name: "Ольга Миколаївна"
+    job_title: "Репетитор з фізики"
+    mark: 5
+    avatar_path: 'olga_mukolaivna_60x60.png'
+  -
+    name: "Олександр Осецький"
+    job_title: "Репетитор з інформатики"
+    mark: 4.5
+    avatar_path: 'illa_60x60.png'

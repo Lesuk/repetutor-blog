@@ -1,10 +1,11 @@
 ---
 title: Пробні тести ЗНО з фізики 2015
-slug: repetitorstvo-najbіlsh-konservativnij-rinok-poslug
+slug: probni-testu-zno-z-fizuku-2015
 description: Послуги із підготовки абітурієнтів до поступання у вузи, а також приватна «домашня» практика – один із найбільш закритих і консервативних ринків. Визначити його обсяг практично неможливо.
 date: 2015-08-06 11:20 EEST
 author_index: 0
-tags: репетиорство, ЗНО, тести, репетитор
+tags: Репетиорство
+category: Репетиорство
 img_url: http://lorempixel.com/400/200/
 ---
 
