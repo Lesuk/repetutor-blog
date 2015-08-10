@@ -1,10 +1,8 @@
-- article_category = article.data.category.present? ? article.data.category.to_s : 'unknown'
-- article_author = article.data.author.present? ? article.data.author.to_s : 'unknown'
 article.articles-list__item
-  = link_to data.categories[article_category]['name'], category_path(article.data.category), class: 'articles-list__item-category'
+  = link_to article_category_name(article), category_path(article.data.category), class: 'articles-list__item-category'
   = link_to article, class: "articles-list__item-title-link" do
     h3.articles-list__item-title = article.title
   p.articles-list__item-description = article.data.description
   .articles-list__item-info
-    = link_to data.authors[article_author]['name'], author_path(article.data.author), class: 'articles-list__item-author'
+    = link_to article_author_name(article), author_path(article.data.author), class: 'articles-list__item-author'
     span.articles-list__item-date = format_date(article.date)

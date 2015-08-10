@@ -4,9 +4,15 @@
 
 module CustomHelpers
 
+  def title(title)
+    @page_title = title
+  end
+
   def page_title(separator = '|')
     if current_page.data.title
       "#{ current_page.data.title } #{ separator } #{ data.site.title }"
+    elsif @page_title
+      "#{ @page_title } #{ separator } #{ data.site.title }"
     else
       data.site.title
     end
@@ -55,6 +61,44 @@ module CustomHelpers
       category = article.metadata[:page]['category']
       categories.push(category) unless categories.include? category
     end
-    return categories
+    categories
+  end
+
+  def featured_articles(all_articles, current_article, size)
+    featured_articles = all_articles.select{ |i| i.metadata[:page]["featured"] rescue false }
+    featured_articles.delete_if{ |i| i == current_article }
+    featured_articles.first(size)
+  end
+
+  def category_name(category_slug)
+    data.categories[category_slug]['name']
+  end
+
+  def article_category_slug(article)
+    article.data.category.present? ? article.data.category.to_s : 'unknown'
+  end
+
+  def article_category_name(article)
+    category_name(article_category_slug(article))
+  end
+
+  def author_name(author_slug)
+    data.authors[author_slug]['name']
+  end
+
+  def article_author_slug(article)
+    article.data.author.present? ? article.data.author.to_s : 'unknown'
+  end
+
+  def article_author_name(article)
+    author_name(article_author_slug(article))
+  end
+
+  def article_author_img(article)
+    data.authors[article_author_slug(article)]['img_path']
+  end
+
+  def article_author_descr(article)
+    data.authors[article_author_slug(article)]['description']
   end
 end

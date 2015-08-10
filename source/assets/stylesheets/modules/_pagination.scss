@@ -14,7 +14,7 @@
 
   .page{
     display: inline-block;
-    padding: 5px 11px;
+    padding: 8px 14px;
     margin: 0 4px 0 0;
     border: 1px solid $border-color;
     border-radius: 3px;
@@ -34,6 +34,7 @@
       border-color: #fff;
       background: $blue-dark;
       color: #fff;
+      font-weight: 700;
     }
   }
 }

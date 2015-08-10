@@ -1,6 +1,5 @@
-- article_author = article.data.author.present? ? article.data.author.to_s : 'unknown'
 .about-author.h-clearfix
   .about-author__headline Про автора
-  img.about-author__img src="#{data.authors[article_author]['img_path']}"
-  = link_to data.authors[article_author]['name'], author_path(article.data.author), class: 'about-author__name'
-  p.about-author__about = data.authors[article_author]['description']
+  img.about-author__img src="#{article_author_img(article)}"
+  = link_to article_author_name(article), author_path(article.data.author), class: 'about-author__name'
+  p.about-author__about = article_author_descr(article)

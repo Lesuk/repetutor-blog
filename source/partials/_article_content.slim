@@ -7,11 +7,10 @@
 
   .article-content__info.h-clearfix
 
-    - article_author = article.data.author.present? ? article.data.author.to_s : 'unknown'
     .article-content__author
       = link_to author_path(article.data.author), class: 'article-content__author-link'
-        img.article-content__author-img src="#{data.authors[article_author]['img_path']}"
-        span.article-content__author-name = data.authors[article_author]['name']
+        img.article-content__author-img src="#{article_author_img(article)}"
+        span.article-content__author-name = article_author_name(article)
 
     span.article-content__date = format_date(article.date)
 

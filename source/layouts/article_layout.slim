@@ -16,13 +16,12 @@ pageable: true
     .article-wrapper__about-author
       = partial 'partials/about_author', locals: {article: current_article}
 
-    - last_articles = blog.articles[0..5]
-    - featured_articles = blog.articles.select{ |i| i.metadata[:page]["featured"] rescue false }
-    - featured_articles.delete_if{ |i| i == current_article }
+    - last_articles = blog.articles.first(5)
+    - five_featured_articles = featured_articles(blog.articles, current_article, 5)
     .article-wrapper__articles-links.h-clearfix
 
       .article-wrapper__recommended-articles
-        = partial 'partials/articles_listing', locals: {headline: 'Рекомендуємо прочитати', articles: featured_articles[0..5]}
+        = partial 'partials/articles_listing', locals: {headline: 'Рекомендуємо прочитати', articles: five_featured_articles[0..5]}
 
       .article-wrapper__last-articles
         = partial 'partials/articles_listing', locals: {headline: 'Останні публікації', articles: last_articles}
