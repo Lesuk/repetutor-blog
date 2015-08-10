@@ -1,6 +1,6 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  site_url = data.site.blog_url
+  site_url = data.site.main_web_site_url
   xml.title "Репетиторство у Львові"
   xml.id URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, blog.options.prefix.to_s)
@@ -15,7 +15,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.id URI.join(site_url, URI.escape(article.url))
       xml.published article.date.to_time.iso8601
       xml.updated File.mtime(article.source_file).iso8601
-      # xml.author { xml.name "Article Author" }
+      xml.author { xml.name article.data.author }
       xml.summary article.summary, "type" => "html"
       xml.content article.body, "type" => "html"
     end

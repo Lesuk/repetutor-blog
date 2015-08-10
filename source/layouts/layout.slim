@@ -10,6 +10,8 @@ html class="no-js" lang="#{data.site.lang}"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic,latin"
     = stylesheet_link_tag "application"
 
+    = feed_tag :atom, "/feed.xml", title: "Atom Feed"
+
   body itemscope="itemscope" itemtype="http://schema.org/WebPage"
 
     = partial 'partials/header'
