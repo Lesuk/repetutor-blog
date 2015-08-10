@@ -1,4 +1,5 @@
 .search-widget.blog-sidebar__widget
   .search-widget__block
-    input.search-widget__input type="text" placeholder="Пошук..."
-    button.search-widget__button
+    form action="#{data.site.url}/search"
+      input.search-widget__input type="text" name="q" placeholder="Пошук..."
+      button.search-widget__button

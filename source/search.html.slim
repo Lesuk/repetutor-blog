@@ -1,0 +1,21 @@
+---
+title: 'Пошук на сайті'
+---
+
+.blog-wrapper.h-clearfix
+  .blog-wrapper__articles-list
+    javascript:
+      (function() {
+        var cx = '015361511945413624115:_urxq8i0v8q';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    <gcse:search></gcse:search>
+
+  .blog-wrapper__blog-sidebar
+    = partial 'partials/blog_sidebar'

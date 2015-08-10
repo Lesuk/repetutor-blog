@@ -35,6 +35,8 @@ activate :blog do |blog|
   blog.per_page = 10
   blog.page_link = "page/{num}"
 
+  blog.new_article_template = 'source/article_template.erb'
+
   blog.custom_collections = {
     category: {
       link: '/categories/{category}.html',

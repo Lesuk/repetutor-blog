@@ -9,7 +9,7 @@
   &__shadow{
     position: absolute;
     top:0;bottom:0;left:0;right:0;
-    background-color: rgba(5, 11, 18, 0.5);
+    background-color: rgba(4, 31, 63, 0.5);
   }
 
   &__text-block{
@@ -28,10 +28,14 @@
     display: inline-block;
     padding-left: 80px;
     line-height: 40px;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
     color: #fff;
     background: transparent url(image_path('logo-big_white.png')) 0px center no-repeat;
+
+    @include breakpoint(500px){
+      font-size: 30px;
+    }
   }
 
   &__description{
