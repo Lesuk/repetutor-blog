@@ -5,9 +5,3 @@ tutors:
     mark: 5
     avatar_path: 'olga_mukolaivna_60x60.png'
     url: 'http://fizuka.repetitor.lviv.ua/'
-  -
-    name: "Олександр Осецький"
-    job_title: "Репетитор з інформатики"
-    mark: 4.5
-    avatar_path: 'illa_60x60.png'
-    url: 'http://it.repetitor.lviv.ua/'
